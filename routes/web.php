@@ -18,16 +18,17 @@ use Illuminate\Support\Facades\Route;
 //    return view('welcome');
 //});
 
-Route::get('/', function () {
-    return view('dashboard');
-});
+//Route::get('/', function () {
+//    return view('index');
+//});
 
 Route::get('/createpost', [CreateController::class, 'createTable']) ;
 
-Route::get('/firstcompany/', [\App\Http\Controllers\DeliveryController::class, 'firstDeliveryCompany']) ;
+Route::get('/', [\App\Http\Controllers\PostController::class, 'index']) ;
 
-Route::get('/secondcompany/', [\App\Http\Controllers\DeliveryController::class, 'secondDeliveryCompany']) ;
-
+Route::get('/newpost', function () {
+    return view('post');
+});
 
 //Route::get('/createpost', function () {
 //    return view('dashboard');
